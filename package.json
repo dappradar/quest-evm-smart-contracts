@@ -1,0 +1,24 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomiclabs/hardhat-solhint": "^3.0.1",
+    "hardhat": "^2.17.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-solidity": "^1.1.3"
+  },
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js --network localhost",
+    "prettier": "prettier --write --plugin=prettier-plugin-solidity 'contracts/**/*.sol'",
+    "verify": "npx hardhat verify --network mumbai"
+  },
+  "dependencies": {
+    "@connext/interfaces": "^2.0.5",
+    "@openzeppelin/contracts": "^4.9.3",
+    "@openzeppelin/contracts-upgradeable": "^4.9.2",
+    "@openzeppelin/hardhat-upgrades": "^2.2.1",
+    "dotenv": "^16.3.1"
+  }
+}

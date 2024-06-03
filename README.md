@@ -1,8 +1,76 @@
 # Quests Smart Contracts Evm
 
+# Adding a New Chain to Quest Service
+
+To add a new chain to the Quest Service, you need to update the `hardhat.config.js` file with new network and Etherscan configuration details. Below is an example of how to configure a new chain, specifically for the Polygon network.
+
+## Configuration
+
+Update your `hardhat.config.js` with the following network configuration for Polygon:
+
+```javascript
+module.exports = {
+  networks: {
+    polygon: {
+      url: "https://polygon.meowrpc.com",
+      accounts: ["<Private key>"],
+    }
+  },
+  etherscan: {
+    apiKey: {
+      polygon: "<Api Key>",
+    }
+  }
+};
+```
+
+## Deployment
+
+Use the following commands to deploy and manage contracts on the Polygon network:
+
+1. **Deploy the TokenHolder contract:**
+   ```shell
+   npx hardhat run scripts/deployTokenHolder.js --network polygon
+
+2. **Verify the TokenHolder contract:**
+   ```shell
+   npx hardhat verify --network polygon <contractAddress>
+
+3. **Before running the deployment, ensure to update this line in the deploy.js script as specified:**
+Update this [line](https://github.com/dappradar/quests-smart-contracts-evm/blob/802006fbaf2021a3b4d2253668dc97232890defa/scripts/deploy.js#L3) with token holder before deploy.js.
+
+4. **Deploy the quest service contract:**
+   ```shell
+   npx hardhat run scripts/deploy.js --network polygon
+
+5. **Verify the quest service contract:**
+   ```shell
+   npx hardhat verify --network polygon <contractAddress> <tokenHolderAddress>
+
+6. **setQuestsDappRadarApprovalStatus:**
+   ```shell
+   setQuestsDappRadarApprovalStatus <QuestsDappRadar Address> in TokenHolder
+
+7. **setNewAdmin:**
+   ```shell
+   setNewAdmin <Our signer wallet> in QuestsDappRadar
+
+8. **Transfer ownerships if needed**
+
+9. **If you wish to deploy ERC20, update this line with your wallet address:**
+Update this [line](https://github.com/dappradar/quests-smart-contracts-evm/blob/802006fbaf2021a3b4d2253668dc97232890defa/scripts/deployErc20.js#L6)
+
+9. **Deploy the ERC20 contract:**
+   ```shell
+   npx hardhat run scripts/deployErc20.js --network polygon
+
+9. **Verify the ERC20:**
+   ```shell
+   npx hardhat verify --network polygon <contract address> Test TEST <mint tokens to this address> <mint token amount with decimals>
+
 ## Usage
 
-To use the AssetsHolder contract, you first need to deploy it.
+To use the AssetsHolder contract, you first need to deploy it. You can use the provided deployment script deployTokenHolder.js to do this.
 
 After deployment, you can call the following functions:
 
@@ -22,3 +90,5 @@ After deployment, you can call the following functions:
 - claimReward(uint256 questId): Allows a winner to claim their rewards.
 
 Please note that the claimReward function should be called by the winner of the quest.
+
+## Contracts
