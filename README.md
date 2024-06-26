@@ -41,7 +41,7 @@ Use the following commands to deploy and manage contracts on the Polygon network
    npx hardhat verify --network polygon <contractAddress>
 
 4. **Before running the deployment, ensure to update this line in the deploy.js script as specified:**
-Update this [line](https://github.com/dappradar/quests-smart-contracts-evm/blob/802006fbaf2021a3b4d2253668dc97232890defa/scripts/deploy.js#L3) with token holder before deploy.js.
+Update this [line](https://github.com/dappradar/quest-evm-smart-contracts/blob/dd041d38a173bfae3e0996f7cf28380ad9d80ad3/scripts/deploy.js#L3) with token holder before deploy.js.
 
 5. **Deploy the quest service contract:**
    ```shell
@@ -62,7 +62,7 @@ Update this [line](https://github.com/dappradar/quests-smart-contracts-evm/blob/
 9. **Transfer ownerships if needed**
 
 9. **If you wish to deploy ERC20, update this line with your wallet address:**
-Update this [line](https://github.com/dappradar/quests-smart-contracts-evm/blob/802006fbaf2021a3b4d2253668dc97232890defa/scripts/deployErc20.js#L6)
+Update this [line](https://github.com/dappradar/quest-evm-smart-contracts/blob/dd041d38a173bfae3e0996f7cf28380ad9d80ad3/scripts/deployErc20.js#L6)
 
 9. **Deploy the ERC20 contract:**
    ```shell
