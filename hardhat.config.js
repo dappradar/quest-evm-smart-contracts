@@ -30,15 +30,15 @@ module.exports = {
     },
     sepolia: {
       url: "https://ethereum-sepolia-rpc.publicnode.com",
-      accounts: [""],
+      accounts: [],
     },
     amoy: {
       url: "https://rpc-amoy.polygon.technology",
-      accounts: [""],
+      accounts: [],
     },
     kroma: {
       url: "https://1rpc.io/kroma",
-      accounts: [""],
+      accounts: [],
     },
     zetachain: {
       url: "https://zetachain-mainnet-archive.allthatnode.com:8545",
@@ -46,7 +46,11 @@ module.exports = {
     },
     base: {
       url: "https://base.llamarpc.com",
-      accounts: [""],
+      accounts: [],
+    },
+    telosEVM: {
+      url: "https://rpc.telos.net",
+      accounts: [],
     },
   },
   etherscan: {
