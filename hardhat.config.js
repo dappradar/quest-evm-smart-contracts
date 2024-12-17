@@ -29,23 +29,58 @@ module.exports = {
       accounts: [],
     },
     sepolia: {
-      url: "https://ethereum-sepolia-rpc.publicnode.com	",
-      accounts: [],
+      url: "https://ethereum-sepolia-rpc.publicnode.com",
+      accounts: [""],
+    },
+    amoy: {
+      url: "https://rpc-amoy.polygon.technology",
+      accounts: [""],
+    },
+    kroma: {
+      url: "https://1rpc.io/kroma",
+      accounts: [""],
     },
     zetachain: {
       url: "https://zetachain-mainnet-archive.allthatnode.com:8545",
       accounts: [],
     },
+    base: {
+      url: "https://base.llamarpc.com",
+      accounts: [""],
+    },
   },
   etherscan: {
-    apiKey: {
-      goerli: "",
-    },
-    apiKey: {
-      polygonMumbai: "",
-    },
-    apiKey: { sepolia: "API_KEY" },
+    apiKey: { sepolia: "" },
     apiKey: { zetachain: "ZETA DOESNT SUPPORT VERIFYING FROM HARDHAT" },
+    apiKey: { base: "" },
+    apiKey: { kroma: "" },
+    apiKey: { amoy: "" },
+    customChains: [
+      {
+        network: "kroma",
+        chainId: 255,
+        urls: {
+          apiURL: "https://api.kromascan.com/api",
+          browserURL: "https://kromascan.com/",
+        },
+      },
+      {
+        network: "amoy",
+        chainId: 80002,
+        urls: {
+          apiURL: "https://api-amoy.polygonscan.com/api",
+          browserURL: "https://amoy.polygonscan.com/",
+        },
+      },
+      {
+        network: "sepolia",
+        chainId: 11155111,
+        urls: {
+          apiURL: "https://api-sepolia.etherscan.io/api",
+          browserURL: "https://sepolia.etherscan.io/",
+        },
+      },
+    ],
   },
   paths: {
     sources: "./contracts",
