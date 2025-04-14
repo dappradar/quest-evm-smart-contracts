@@ -52,6 +52,10 @@ module.exports = {
       url: "https://rpc.telos.net",
       accounts: [],
     },
+    sei: {
+      url: "https://evm-rpc.sei-apis.com",
+      accounts: [""],
+    },
   },
   etherscan: {
     apiKey: { sepolia: "" },
